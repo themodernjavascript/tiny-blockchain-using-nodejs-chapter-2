@@ -10,8 +10,8 @@ class Block {
     this.nonce = 0;
   }
 
-  calculateHash() {
-    return SHA256(
+  calculateHash() { 
+    return SHA256( 
       this.index + 
       this.previousHash + 
       this.timestamp + 
@@ -36,8 +36,8 @@ class Blockchain {
     this.difficulty = 2;
   }
 
-  createGenesisBlock() {
-     return new Block(0, "Genesis block", "0");
+  createGenesisBlock() { 
+    return new Block(0, "Genesis block", "0");
   }
 
   getLatestBlock() {
@@ -51,7 +51,7 @@ class Blockchain {
   }
 
   isChainValid() {
-    for (let i = 1; i < this.chain.length; i++){
+    for (let i = 1; i < this.chain.length; i++) {
       const currentBlock = this.chain[i];
       const previousBlock = this.chain[i - 1];
 
